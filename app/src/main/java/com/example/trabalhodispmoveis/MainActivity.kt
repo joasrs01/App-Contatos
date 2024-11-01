@@ -30,7 +30,11 @@ class MainActivity : AppCompatActivity() {
         rcView = findViewById(R.id.rcView)
         rcView.layoutManager = LinearLayoutManager(this)
 
-        val listaContatos = dbHelper.buscarContatos();
+        val listaContatos = dbHelper.buscarContatos()
+
+        if(listaContatos.size > 0){
+            listaContatos.forEach{ contato -> contato.telefones = dbHelper.buscarTelefonesPorContato(contato.id) }
+        }
 
         adaptadorContato = AdaptadorContato(listaContatos)
         rcView.adapter = adaptadorContato

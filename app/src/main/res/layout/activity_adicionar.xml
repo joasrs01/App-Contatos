@@ -15,10 +15,9 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.92" />
 
     <EditText
         android:id="@+id/txtNome"
@@ -30,23 +29,44 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btnAdicionarContato"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.103" />
 
-    <EditText
-        android:id="@+id/txtTelefone"
-        android:layout_width="304dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Telefone"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnAdicionarContato"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="117dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="20dp"
+        android:text="Telefones"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/containerTelefones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/containerTelefones"
+        android:layout_width="309dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNome"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317"></LinearLayout>
+
+    <Button
+        android:id="@+id/btnAdicionarTelefone"
+        android:layout_width="177dp"
+        android:layout_height="58dp"
+        android:text="Add Telefone"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdicionarContato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.209"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerTelefones"
+        app:layout_constraintVertical_bias="0.087" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
