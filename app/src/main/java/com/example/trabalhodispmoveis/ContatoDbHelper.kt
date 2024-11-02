@@ -89,4 +89,26 @@ class ContatoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         cursor.close()
         return telefones
     }
+/*
+    fun updateContact(contactId: Long, name: String, email: String, phoneNumbers: List<PhoneNumber>) {
+        // Atualizar o contato no banco de dados
+        val db = writableDatabase
+        val contentValues = ContentValues().apply {
+            put("name", name)
+            put("email", email)
+        }
+        db.update("contacts", contentValues, "id = ?", arrayOf(contactId.toString()))
+
+        // Atualizar os números de telefone (exclua os existentes e insira novamente)
+        db.delete("phone_numbers", "contact_id = ?", arrayOf(contactId.toString()))
+        phoneNumbers.forEach { phoneNumber ->
+            val phoneValues = ContentValues().apply {
+                put("contact_id", contactId)
+                put("number", phoneNumber.number)
+                put("type", phoneNumber.type)
+            }
+            db.insert("phone_numbers", null, phoneValues)
+        }
+    }
+*/
 }
